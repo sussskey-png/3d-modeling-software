@@ -1,6 +1,9 @@
 {
-  "name": "3d-modeling-frontend",
+  "name": "3d-modeling-software",
   "version": "0.1.0",
+  "description": "A user-friendly 3D modeling application for 3D printing",
+  "main": "public/electron.js",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
@@ -16,13 +19,27 @@
   "devDependencies": {
     "react-scripts": "5.0.1",
     "@types/react": "^18.0.0",
-    "@types/three": "^r128.0.0"
+    "@types/three": "^r128.0.0",
+    "electron": "^25.0.0",
+    "electron-builder": "^24.4.0",
+    "electron-is-dev": "^2.0.0",
+    "electron-notarize": "^2.1.0",
+    "concurrently": "^8.0.0",
+    "wait-on": "^7.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "electron-start": "wait-on http://localhost:3000 && electron .",
+    "start": "concurrently \"npm run react-start\" \"npm run electron-start\"",
+    "build": "npm run react-build",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000 && electron . --disable-gpu\"",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "electron-builder",
+    "dist": "npm run build && electron-builder --publish=never"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +55,63 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "build": {
+    "appId": "com.3dmodeling.app",
+    "productName": "3D Modeling Software",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "public/electron.js"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "certificateFile": null,
+      "certificatePassword": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "3D Modeling Software"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.graphics-design"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Graphics"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
   }
 }

@@ -7,12 +7,16 @@
   padding: 0 20px;
   height: 60px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: drag;
 }
 
 .header-left, .header-right {
   display: flex;
   align-items: center;
   gap: 20px;
+  -webkit-app-region: no-drag;
 }
 
 .menu-toggle {

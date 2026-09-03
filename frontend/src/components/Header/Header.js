@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleSidebar } from '../../stores/slices/uiSlice';
+import WinControls from './WinControls';
 import './Header.css';
 
 function Header() {
@@ -23,6 +24,7 @@ function Header() {
         <button className="header-btn">Edit</button>
         <button className="header-btn">View</button>
         <button className="header-btn">Help</button>
+        <WinControls />
       </div>
     </div>
   );
