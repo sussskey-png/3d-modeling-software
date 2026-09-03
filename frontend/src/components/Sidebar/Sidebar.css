@@ -1,0 +1,40 @@
+.sidebar {
+  width: 300px;
+  background-color: #ecf0f1;
+  border-right: 1px solid #bdc3c7;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-tabs {
+  display: flex;
+  border-bottom: 1px solid #bdc3c7;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background-color: #d5dbdb;
+  color: #2c3e50;
+  cursor: pointer;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  background-color: #c5ccd0;
+}
+
+.tab-btn.active {
+  background-color: #ecf0f1;
+  border-bottom-color: #3498db;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}

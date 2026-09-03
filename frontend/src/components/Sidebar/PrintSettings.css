@@ -1,0 +1,62 @@
+.print-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.setting-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.setting-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: uppercase;
+}
+
+.setting-group input[type="number"],
+.setting-group input[type="range"] {
+  padding: 6px 8px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.setting-group input[type="number"] {
+  width: 100%;
+}
+
+.setting-group input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.value-display {
+  font-size: 12px;
+  color: #3498db;
+  font-weight: 600;
+}
+
+.setting-group.checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+.setting-group.checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  text-transform: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.setting-group.checkbox input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}

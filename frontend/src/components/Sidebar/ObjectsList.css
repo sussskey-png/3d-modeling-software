@@ -1,0 +1,66 @@
+.objects-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty-state {
+  color: #7f8c8d;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.objects-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.object-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+  background-color: white;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.object-item:hover {
+  background-color: #ecf0f1;
+}
+
+.object-item.selected {
+  background-color: #3498db;
+  color: white;
+  border-color: #2980b9;
+}
+
+.object-name {
+  font-size: 13px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.object-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.object-item.selected .delete-btn {
+  color: white;
+  opacity: 1;
+}

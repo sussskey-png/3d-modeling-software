@@ -1,0 +1,47 @@
+.toolbar {
+  padding: 12px;
+  border-bottom: 1px solid #bdc3c7;
+}
+
+.toolbar-section {
+  margin-bottom: 12px;
+}
+
+.toolbar-title {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.toolbar-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.toolbar-btn {
+  padding: 12px 8px;
+  background-color: white;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-btn:hover {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #bdc3c7;
+  margin: 8px 0;
+}
